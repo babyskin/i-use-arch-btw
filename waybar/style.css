@@ -1,0 +1,83 @@
+@define-color pastel-gray rgba(154,164,170,0.85);
+@define-color pastel-gray-solid rgba(154,164,170,1);
+@define-color pastel-gray-soft rgba(154,164,170,0.45);
+
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: "Roboto Mono Medium", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  color: #000000;
+}
+
+#workspaces button {
+  color: #000000;
+  background-color: @pastel-gray;
+  margin: 6px 3px;
+}
+
+#workspaces button:hover {
+  background-color: @pastel-gray-solid;
+}
+
+#workspaces button.focused {
+  background-color: @pastel-gray-solid;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#idle_inhibitor,
+#mpd,
+#language {
+  padding: 0 10px;
+  margin: 6px 3px;
+  color: #000000;
+  background-color: @pastel-gray;
+}
+
+#window,
+#workspaces {
+  margin: 0 4px;
+}
+
+#battery.charging {
+  background-color: @pastel-gray-solid;
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+}
+
+#network.disconnected {
+  background-color: #f53c3c;
+}
+
+#temperature.critical {
+  background-color: #eb4d4b;
+}
+
+#idle_inhibitor.activated {
+  background-color: @pastel-gray-solid;
+}
+
+#mpd.paused {
+  background-color: @pastel-gray-soft;
+}
+
